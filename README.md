@@ -69,20 +69,41 @@ These are some commonly used AWS services you’ll encounter in practice:
 
 To allow Terraform to interact with your AWS account, you need two things:
 
-1. The `aws` provider block
-2. Authentication credentials so Terraform can access your account
+1. sAuthentication credential so Terraform can access your account
+2. The `aws` provider block
 
+### 🔧 Configure AWS CLI with a Named Profile
 
-### 🔧 Step 1: Create `provider.tf`
+```bash
+aws configure --profile yourmentors
+
+AWS Access Key ID [None]: <Your AWS Access Key ID>
+AWS Secret Access Key [None]: <Your AWS Secret Access Key>
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+
+### 🔧 Create `provider.tf`
 
 Although Terraform lets you define the provider block in **any `.tf` file**, it's ideal to keep it in a dedicated file like `provider.tf` for better organization.
 
 ```hcl
 # provider.tf
 
-provider "aws" {
-  region = "us-east-1"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "6.0.0-beta2"
+    }
+  }
 }
+
+provider "aws" {
+  region  = "us-west-2"
+  profile = "yourmentors"
+}
+```
 ---
 
 # 🧾 Terraform State Management
