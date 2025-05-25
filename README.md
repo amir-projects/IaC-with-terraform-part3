@@ -237,7 +237,8 @@ This will allow you to:
 aws s3api create-bucket \
   --bucket <your-bucket-name> \
   --region us-west-2 \
-  --create-bucket-configuration LocationConstraint=us-west-2
+  --create-bucket-configuration LocationConstraint=us-west-2 \
+  --profile <your-aws-profile>
 ```
 
 3. **Enable versioning on the bucket (Recommended)**
@@ -245,7 +246,8 @@ aws s3api create-bucket \
 ```bash
 aws s3api put-bucket-versioning \
   --bucket <your-bucket-name> \
-  --versioning-configuration Status=Enabled
+  --versioning-configuration Status=Enabled \
+  --profile <your-aws-profile>
 
 ```
 4. **Configure your backend in backend.tf**
