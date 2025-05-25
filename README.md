@@ -124,6 +124,7 @@ Terraform state is a critical component of any Terraform workflow. It keeps trac
   - Attributes of provisioned infrastructure
   - Dependency relationships between resources
 
+![Terraform State](./assets/terraform-state-file.png)
 
 ## 📁 Where Is the State Stored?
 
