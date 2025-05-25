@@ -262,5 +262,42 @@ terraform {
   }
 }
 ```
+---
 
+# 🧪 Hands-on Lab: Deploying an EC2 Instance with Remote State
 
+In this lab, you'll use Terraform to provision an EC2 instance in AWS, while storing your state file remotely in an S3 bucket.
+
+## 🎯 Lab Objectives
+
+By the end of this lab, you will be able to:
+- Set up an S3 bucket to store Terraform state
+- Configure Terraform to use a remote backend (S3)
+- Deploy an EC2 instance using Terraform
+- Verify that the state file is stored in your S3 bucket
+- Clean up resources after the lab
+
+## 🛠️ Step-by-Step Instructions
+
+### 1. Create an S3 Bucket for Remote State
+
+### 2. Configure Terraform Backend
+
+### 3. Define an EC2 Instance Resource
+
+### 4. Initialize and Apply Terraform Configuration
+
+### 5. Verify Remote State
+
+### 6. Clean Up
+
+## ✅ Summary
+
+In this lab, you:
+
+- 🔧 Created an S3 bucket to store Terraform state  
+- 🧭 Configured Terraform to use a remote backend  
+- 🚀 Deployed and destroyed an EC2 instance  
+- 🔍 Verified that Terraform state was managed remotely  
+
+You’re now ready to manage infrastructure at scale using **Terraform and AWS**!
