@@ -4,7 +4,7 @@ This repository contains the code and instructions for a hands-on session on usi
 
 
 
-## 🧭 Session Overview
+## 🧭 Overview
 
 **Topics Covered:**
 - Terraform with AWS: Real-world usage
