@@ -91,28 +91,17 @@ terraform {
 
 ## 🔐 Best Practices for Managing Terraform State
 
-To ensure reliability, security, and maintainability when working with Terraform state files, follow these best practices:
+To ensure your Terraform state remains secure, reliable, and maintainable, follow these best practices:
 
 | Practice                  | Description |
 |--------------------------|-------------|
-| Use Remote Backends      | Always use remote backends like AWS S3, Azure Blob Storage, or Terraform Cloud in team environments. |
-| Enable Encryption        | Set `encrypt = true` when using S3 to encrypt the state file at rest. |
-| Use State Locking        | Use DynamoDB (for S3) or similar services to enable locking and prevent concurrent writes. |
-| Backup Regularly         | Schedule regular backups of your state file to avoid accidental loss. |
-| Enable Versioning on S3  | If using S3, enable versioning to recover from accidental deletions or overwrites. |
-| Restrict IAM Access      | Limit who can read/write to the S3 bucket containing the state file. |
-| Avoid Manual Editing     | Never edit `.tfstate` manually unless absolutely necessary and under expert supervision. |
-| Use Workspaces Sparingly | Prefer separate configurations or modules instead of overusing Terraform workspaces. |
-
----
-
-## 🧹 Cleaning Up State
-
-If you need to reset or delete the state:
-
-### Remove Specific Resource from State
-
-Use this command to remove a specific resource from the state without destroying it in real life:
-
-```bash
-terraform state rm aws_instance.example
+| **Use Remote Backends**  | Always store state remotely (e.g., AWS S3, Azure Blob, Terraform Cloud) in team or production environments. |
+| **Enable Encryption**    | When using S3, set `encrypt = true` to encrypt the state file at rest. |
+| **Use State Locking**    | Use DynamoDB (for S3), or equivalent services, to prevent concurrent writes and avoid conflicts. |
+| **Backup Regularly**     | Schedule regular backups of your state file to protect against accidental deletion or corruption. |
+| **Enable Versioning**    | If using S3, enable versioning to recover from accidental overwrites or deletions. |
+| **Restrict IAM Access**  | Limit who can read/write to the state backend using IAM policies or access controls. |
+| **Avoid Manual Editing** | Never edit `.tfstate` manually unless absolutely necessary and under expert supervision. |
+| **Use Workspaces Sparingly** | Prefer separate configurations or modules instead of overusing Terraform workspaces for environment separation. |
+| **Monitor and Audit**    | Enable logging and monitoring (e.g., AWS CloudTrail + S3 data events) to track access and changes to the state file. |
+| **Separate Environments**| Use different state files or backends for dev/staging/prod environments to avoid cross-environment drift. |
