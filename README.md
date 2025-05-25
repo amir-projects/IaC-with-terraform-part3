@@ -2,7 +2,7 @@
 
 This repository contains the code and instructions for a hands-on session on using **Terraform with AWS**, **managing Terraform state**, and configuring a **remote backend using S3 (and optional DynamoDB)**.
 
----
+
 
 ## 🧭 Session Overview
 
@@ -12,7 +12,7 @@ This repository contains the code and instructions for a hands-on session on usi
 - Remote backend with AWS S3
 - Hands-on Lab: Deploying an EC2 instance with remote state
 
----
+
 
 ## 📦 Prerequisites
 
@@ -28,7 +28,6 @@ Before beginning, ensure you have:
 
 Terraform is widely used with **Amazon Web Services (AWS)** to automate infrastructure provisioning in a safe, predictable, and repeatable way. By defining your infrastructure as code (IaC), you can version-control your entire AWS environment, enforce consistency across deployments, and simplify collaboration among teams.
 
----
 
 ## 🧱 Why Use Terraform with AWS?
 
