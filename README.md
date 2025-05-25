@@ -18,9 +18,9 @@ This repository contains the code and instructions for a hands-on session on usi
 
 Before beginning, ensure you have:
 
-- An AWS account with access to EC2, S3
+- An AWS account with necessary access
 - [Terraform installed](https://developer.hashicorp.com/terraform/downloads)
-- [AWS CLI installed and configured](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- [AWS CLI installed](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 
 ---
 
