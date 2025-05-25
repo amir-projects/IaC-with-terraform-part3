@@ -283,7 +283,19 @@ By the end of this lab, you will be able to:
 
 ### 1. Create an S3 Bucket for Remote State (Details availalbe in previous section)
 
-### 2. Configure Terraform Backend (Details availalbe in previous section)
+### 2. Configure Terraform Backend
+
+```hcl
+# backend.tf
+terraform {
+  backend "s3" {
+    bucket         = "terraform-state-yourmentors"
+    key            = "terraform.tfstate"
+    region         = "us-west-2"
+    encrypt        = true
+  }
+}
+```
 
 ### 3. Define an EC2 Instance Resource
 
