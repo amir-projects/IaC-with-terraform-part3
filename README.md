@@ -67,13 +67,22 @@ These are some commonly used AWS services you’ll encounter in practice:
 
 ## 🚀 Getting Started with AWS Provider
 
-To configure Terraform to talk to AWS:
+To allow Terraform to interact with your AWS account, you need two things:
+
+1. The `aws` provider block
+2. Authentication credentials so Terraform can access your account
+
+
+### 🔧 Step 1: Create `provider.tf`
+
+Although Terraform lets you define the provider block in **any `.tf` file**, it's ideal to keep it in a dedicated file like `provider.tf` for better organization.
 
 ```hcl
+# provider.tf
+
 provider "aws" {
   region = "us-east-1"
 }
-```
 ---
 
 # 🧾 Terraform State Management
