@@ -235,7 +235,7 @@ This will allow you to:
 
 ```bash
 aws s3api create-bucket \
-  --bucket terraform-state-yourmentors \
+  --bucket <your-bucket-name> \
   --region us-west-2 \
   --create-bucket-configuration LocationConstraint=us-west-2
 ```
@@ -244,7 +244,7 @@ aws s3api create-bucket \
 
 ```bash
 aws s3api put-bucket-versioning \
-  --bucket terraform-state-yourmentors \
+  --bucket <your-bucket-name> \
   --versioning-configuration Status=Enabled
 
 ```
@@ -253,9 +253,9 @@ aws s3api put-bucket-versioning \
 ```hcl
 terraform {
   backend "s3" {
-    bucket         = "my-terraform-state-bucket"
-    key            = "project1/terraform.tfstate"
-    region         = "us-west-2"
+    bucket         = "<your-bucket-name>"
+    key            = "terraform.tfstate"
+    region         = "<your-aws-region>"
     encrypt        = true
   }
 }
