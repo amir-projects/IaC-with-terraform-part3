@@ -281,7 +281,20 @@ By the end of this lab, you will be able to:
 
 ## 🛠️ Step-by-Step Instructions
 
-### 1. Create an S3 Bucket for Remote State (Details availalbe in previous section)
+### 1. Create an S3 Bucket for Remote State
+
+```bash
+aws s3api create-bucket \
+  --bucket terraform-state-yourmentors \
+  --region us-west-2 \
+  --create-bucket-configuration LocationConstraint=us-west-2 \
+  --profile "yourmentors"
+
+aws s3api put-bucket-versioning \
+  --bucket terraform-state-yourmentors \
+  --versioning-configuration Status=Enabled \
+  --profile "yourmentors"
+```
 
 ### 2. Configure Terraform Backend
 
@@ -292,6 +305,7 @@ terraform {
     bucket         = "terraform-state-yourmentors"
     key            = "terraform.tfstate"
     region         = "us-west-2"
+    profile        = "yourmentors"
     encrypt        = true
   }
 }
