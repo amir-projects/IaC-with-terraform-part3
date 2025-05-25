@@ -220,9 +220,7 @@ This will allow you to:
 
 ### 📝 Step-by-Step Instructions
 
-1. **Ensure AWS CLI is configured**
-
-2. **Create S3 bucket for storing the state**
+1. **Create S3 bucket for storing the state**
 
 ```bash
 aws s3api create-bucket \
@@ -232,7 +230,7 @@ aws s3api create-bucket \
   --profile <your-aws-profile>
 ```
 
-3. **Enable versioning on the bucket (Recommended)**
+2. **Enable versioning on the bucket (Recommended)**
 
 ```bash
 aws s3api put-bucket-versioning \
@@ -241,7 +239,7 @@ aws s3api put-bucket-versioning \
   --profile <your-aws-profile>
 
 ```
-4. **Configure your backend in backend.tf**
+3. **Configure your backend in backend.tf**
 
 ```hcl
 # backend.tf
@@ -273,7 +271,18 @@ By the end of this lab, you will be able to:
 
 ## 🛠️ Step-by-Step Instructions
 
-### 1. Create an S3 Bucket for Remote State
+### 1. Configure AWS Credentials
+
+```bash
+aws configure --profile yourmentors
+
+AWS Access Key ID [None]: <Your AWS Access Key ID>
+AWS Secret Access Key [None]: <Your AWS Secret Access Key>
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+
+### 2. Create an S3 Bucket for Remote State
 
 ```bash
 aws s3api create-bucket \
@@ -288,7 +297,7 @@ aws s3api put-bucket-versioning \
   --profile "yourmentors"
 ```
 
-### 2. Configure Terraform Backend
+### 3. Configure Terraform Backend
 
 ```hcl
 # backend.tf
@@ -303,7 +312,7 @@ terraform {
 }
 ```
 
-### 3. Define an EC2 Instance Resource
+### 4. Define an EC2 Instance Resource
 
 ```hcl
 # main.tf
@@ -334,19 +343,19 @@ resource "aws_instance" "my_ec2" {
 }
 ```
 
-### 4. Initialize and Apply Terraform Configuration
+### 5. Initialize and Apply Terraform Configuration
 
 ```bash
 terraform init
 terraform apply
 ```
-### 5. Verify Availability of Remote State File
+### 6. Verify Availability of Remote State File
 
 ```bash
 aws s3 ls s3://terraform-state-yourmentors --profile "yourmentors"
 ```
 
-### 6. Clean Up
+### 7. Clean Up
 
 ```bash
 terraform destroy
