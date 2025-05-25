@@ -40,9 +40,6 @@ Terraform is widely used with **Amazon Web Services (AWS)** to automate infrastr
 | **Safe Changes** | Terraform plans and applies updates predictably (idempotency) |
 | **Team Collaboration** | Use remote state for safe, collaborative work across teams |
 
-> 💡 You’ve already seen how Terraform variables and outputs work — now you'll apply them to real AWS resources!
-
----
 
 ## 🛠️ What Can You Manage on AWS with Terraform?
 
@@ -56,8 +53,6 @@ These are some commonly used AWS services you’ll encounter in practice:
 - **Lambda** – Serverless functions  
 - **ECS/EKS** – Container management at scale  
 
----
-
 ## 💼 Example Use Cases
 
 | Use Case | How Terraform Helps |
@@ -68,7 +63,6 @@ These are some commonly used AWS services you’ll encounter in practice:
 | **Cost Optimization** | Schedule non-prod EC2 stop/start using tagging and Lambda |
 | **Infrastructure Auditing** | Maintain audit logs and track who changed what via version control and remote state |
 
----
 
 ## 🚀 Getting Started with AWS Provider
 
