@@ -326,6 +326,10 @@ terraform apply
 
 ### 6. Clean Up
 
+```bash
+terraform destroy
+```
+
 ## ✅ Summary
 
 In this lab, you:
