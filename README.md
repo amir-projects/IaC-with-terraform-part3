@@ -208,7 +208,47 @@ Terraform supports storing state remotely using **Amazon S3**. This approach pro
 - Optional locking via DynamoDB
 - Version control (if enabled on the bucket)
 
-### 🛠️ Sample Configuration
+### 🚀 Getting Started with Remote Backend S3
+
+In this demo, we’ll configure a **remote backend using AWS S3**.
+
+This will allow you to:
+
+- Store Terraform state remotely and securely
+- Enable team collaboration
+- Prevent state file corruption through locking
+
+### 🧰 Files Required
+
+| File         | Purpose                                   |
+|--------------|-------------------------------------------|
+| `main.tf`    | Defines the AWS resource (e.g., EC2)       |
+| `provider.tf`| AWS provider configuration                |
+| `backend.tf` | Remote backend configuration              |
+| `outputs.tf` | (Optional) Output values after deployment |
+
+### 📝 Step-by-Step Instructions
+
+1. **Ensure AWS CLI is configured**
+
+2. **Create S3 bucket for storing the state**
+
+```bash
+aws s3api create-bucket \
+  --bucket terraform-state-yourmentors \
+  --region us-west-2 \
+  --create-bucket-configuration LocationConstraint=us-west-2
+```
+
+3. **Enable versioning on the bucket (Recommended)**
+
+```bash
+aws s3api put-bucket-versioning \
+  --bucket terraform-state-yourmentors \
+  --versioning-configuration Status=Enabled
+
+```
+4. **Configure your backend in backend.tf**
 
 ```hcl
 terraform {
