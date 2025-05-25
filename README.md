@@ -253,6 +253,8 @@ aws s3api put-bucket-versioning \
 4. **Configure your backend in backend.tf**
 
 ```hcl
+# backend.tf
+
 terraform {
   backend "s3" {
     bucket         = "<your-bucket-name>"
@@ -279,13 +281,15 @@ By the end of this lab, you will be able to:
 
 ## 🛠️ Step-by-Step Instructions
 
-### 1. Create an S3 Bucket for Remote State
+### 1. Create an S3 Bucket for Remote State (Details availalbe in previous section)
 
-### 2. Configure Terraform Backend
+### 2. Configure Terraform Backend (Details availalbe in previous section)
 
 ### 3. Define an EC2 Instance Resource
 
 ```hcl
+# main.tf
+
 data "aws_ami" "linux" {
    most_recent = true
    owners      = ["amazon"]
@@ -314,6 +318,10 @@ resource "aws_instance" "my_ec2" {
 
 ### 4. Initialize and Apply Terraform Configuration
 
+```bash
+terraform init
+terraform apply
+```
 ### 5. Verify Remote State
 
 ### 6. Clean Up
