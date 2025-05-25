@@ -75,17 +75,17 @@ To allow **Terraform** to interact with your **AWS account**, you need to:
 ### 🔐 Step 1: Configure AWS CLI with a Named Profile
 
 ```bash
-aws configure --profile yourmentors
+aws configure --profile <your-profile-name>
 
 AWS Access Key ID [None]: <Your AWS Access Key ID>
 AWS Secret Access Key [None]: <Your AWS Secret Access Key>
-Default region name [None]: us-west-2
+Default region name [None]: <your-aws-region>
 Default output format [None]: json
 ```
 ✅ To verify it's working:
 
 ```bash
-aws sts get-caller-identity --profile yourmentors
+aws sts get-caller-identity --profile <your-profile-name>
 ```
 
 ### 🔧 Step 2: Create `provider.tf`
@@ -105,8 +105,8 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
-  profile = "yourmentors"
+  region  = "<your-aws-region>"
+  profile = "<your-profile-name>"
 }
 ```
 ---
