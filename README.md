@@ -88,12 +88,14 @@ terraform {
     encrypt        = true
   }
 }
+```
+---
 
 ## 🔐 Best Practices for Managing Terraform State
 
 To ensure your Terraform state remains secure, reliable, and maintainable, follow these best practices:
 
-| Practice                  | Description |
+| Practice                 | Description |
 |--------------------------|-------------|
 | **Use Remote Backends**  | Always store state remotely (e.g., AWS S3, Azure Blob, Terraform Cloud) in team or production environments. |
 | **Enable Encryption**    | When using S3, set `encrypt = true` to encrypt the state file at rest. |
