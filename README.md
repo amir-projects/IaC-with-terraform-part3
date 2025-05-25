@@ -348,7 +348,11 @@ resource "aws_instance" "my_ec2" {
 terraform init
 terraform apply
 ```
-### 5. Verify Remote State
+### 5. Verify Availability of Remote State File
+
+```bash
+aws s3 ls s3://terraform-state-yourmentors --profile "yourmentors"
+```
 
 ### 6. Clean Up
 
