@@ -1,6 +1,6 @@
 # 🚀 Terraform on AWS – State Management and Remote Backend
 
-This repository contains the code and instructions for a hands-on session on using **Terraform with AWS**, **managing Terraform state**, and configuring a **remote backend using S3 (and optional DynamoDB)**.
+This repository contains the code and instructions for a hands-on session on using **Terraform with AWS**, **managing Terraform state**, and configuring a **remote backend using S3**.
 
 
 
