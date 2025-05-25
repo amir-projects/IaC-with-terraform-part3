@@ -210,7 +210,6 @@ Terraform supports storing state remotely using **Amazon S3**. This approach pro
 
 ### 🚀 Getting Started with Remote Backend S3
 
-In this demo, we’ll configure a **remote backend using AWS S3**.
 
 This will allow you to:
 
@@ -218,14 +217,6 @@ This will allow you to:
 - Enable team collaboration
 - Prevent state file corruption through locking
 
-### 🧰 Files Required
-
-| File         | Purpose                                   |
-|--------------|-------------------------------------------|
-| `main.tf`    | Defines the AWS resource (e.g., EC2)       |
-| `provider.tf`| AWS provider configuration                |
-| `backend.tf` | Remote backend configuration              |
-| `outputs.tf` | (Optional) Output values after deployment |
 
 ### 📝 Step-by-Step Instructions
 
@@ -260,6 +251,7 @@ terraform {
     bucket         = "<your-bucket-name>"
     key            = "terraform.tfstate"
     region         = "<your-aws-region>"
+    profile        = "<your-profile-name>"
     encrypt        = true
   }
 }
